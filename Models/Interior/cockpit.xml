@@ -1,0 +1,1 @@
+<?xml version="1.0"?><PropertyList><path>cockpit.ac</path><!-- Instruments --><model>		<name>instruments</name>		<path>Aircraft/a400m/Models/Interior/instruments.xml</path>		<offsets>			<x-m>-2.8</x-m>			<y-m>0</y-m>			<z-m>5</z-m>			<pitch-deg>-10.0</pitch-deg>		</offsets>	</model></PropertyList>

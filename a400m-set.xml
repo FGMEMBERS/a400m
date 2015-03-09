@@ -1,0 +1,406 @@
+<PropertyList>
+ <sim>
+  <description>Airbus Military A400M</description>
+  <author>Anon(3d) StuartC(FDM + Cockpit )</author>
+  <status>alpha</status>
+  <aircraft-version>2.0c</aircraft-version>
+
+  <flight-model>yasim</flight-model>
+  <aero>a400m-yasim</aero>
+
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <model>
+   <path>Aircraft/a400m/Models/a400m-Grizzly.xml</path>
+  </model>
+  
+  <submodels>
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/a400m/Submodels/submodels.xml</path>
+	   <path>Aircraft/a400m/Models/payload/loads.xml</path>
+    </submodels>
+  
+  <startup>
+      <splash-texture>Aircraft/a400m/splash.png</splash-texture>
+    </startup>
+  
+  
+  <systems>
+          <autopilot>
+            <path>Aircraft/a400m/Systems/autopilot3.xml</path>
+          </autopilot>
+          <electrical>
+            <path>Aircraft/Generic/generic-electrical.xml</path>
+          </electrical>
+          <refuel>
+            <type>probe</type>
+            <serviceable type="bool">true</serviceable>
+          </refuel>
+  </systems>
+  
+   <mp-systems>
+      <radar-enabled type="bool">true</radar-enabled>
+      <ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
+      <combat-enabled type="bool">true</combat-enabled>
+  </mp-systems>	
+
+  <view n="0">
+    <name>Cockpit</name>
+    <type>lookfrom</type>
+    <internal type="bool">true</internal>
+    <config>
+      
+      <x-offset-m type="double">-0.5</x-offset-m>
+      <y-offset-m type="double">0.6</y-offset-m>
+      <z-offset-m type="double">-18.7</z-offset-m>
+	  <default-field-of-view-deg>82</default-field-of-view-deg>
+    </config>
+  </view>
+  
+  
+  <view n="100">
+	<name>Cockpit cam</name>
+	 <internal archive="y">false</internal>
+	
+	<config>
+		<from-model type="bool">true</from-model>
+		<from-model-idx type="int">0</from-model-idx>
+		 <x-offset-m type="double">0</x-offset-m>
+      <y-offset-m type="double">0.6</y-offset-m>
+      <z-offset-m type="double">-18.0</z-offset-m>
+	  <default-field-of-view-deg>82</default-field-of-view-deg>
+	</config>
+
+</view>
+
+<view n="101">
+	<name>Loadmaster</name>
+	 <internal archive="y">false</internal>
+	
+	<config>
+		<from-model type="bool">true</from-model>
+		<from-model-idx type="int">0</from-model-idx>
+		 <x-offset-m type="double">1.4</x-offset-m>
+      <y-offset-m type="double">-0.1</y-offset-m>
+      <z-offset-m type="double">1.7</z-offset-m>
+	  <default-field-of-view-deg>60</default-field-of-view-deg>
+	  <heading-offset-deg>340</heading-offset-deg>
+	</config>
+
+</view>
+ 
+
+  <view n="1">
+   <config>
+    <z-offset-m archive="y">34</z-offset-m>
+   </config>
+  </view>
+
+  <chase-distance-m>-65</chase-distance-m>
+
+  <sound>
+   <path archive="y">Aircraft/a400m/Sounds/sound.xml</path>
+  </sound>
+
+  <hud>
+   <path n="1">Huds/NTPS.xml</path>
+   <visibility n="1">true</visibility>
+   <palette>
+    <color n="0">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">0.38</red>
+     <green type="float">1.0</green>
+     <blue type="float">0.22</blue>
+    </color>
+    <color n="1">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">1.0</red>
+     <green type="float">0.2</green>
+     <blue type="float">0.0</blue>
+    </color>
+   </palette>
+
+   <clipping>
+    <left type="double">-225</left>
+    <right type="double">225</right>
+    <top type="double">200</top>
+    <bottom type="double">-210</bottom>
+   </clipping>
+  
+  </hud>
+  
+  
+  
+  <flaps>
+   <setting>0.0</setting>
+   <setting>0.25</setting> 
+   <setting>0.50</setting> 
+   <setting>0.75</setting> 
+   <setting>1.0</setting> 
+  </flaps>
+  
+  
+    <help>
+      <title>A-400M</title>
+      <key>
+        <name>8</name>
+        <desc>Launch Flares</desc>
+      </key>
+	  <key>
+        <name>Shift-D</name>
+        <desc>Open/Close cargo ramp</desc>
+      </key>
+    </help>
+	
+	
+<!-- Payload options -->
+
+
+  <weight n="0">
+<name>Cargobay1</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+
+<opt>
+<name>1x Hummer</name>
+<lbs>5700</lbs>
+</opt>
+
+<opt>
+<name>2x Hummer</name>
+<lbs>11400</lbs>
+</opt>
+
+<opt>
+<name>1x LandRover WMIK</name>
+<lbs>9020</lbs>
+</opt>
+
+<opt>
+<name>2x LandRover WMIK</name>
+<lbs>18040</lbs>
+</opt>
+
+<opt>
+<name>1x Jackal</name>
+<lbs>14896</lbs>
+</opt>
+
+<opt>
+<name>2x Jackal</name>
+<lbs>29792</lbs>
+</opt>
+
+<opt>
+<name>MTVR</name>
+<lbs>27900</lbs>
+</opt>
+
+<opt>
+<name>BVS10-Viking</name>
+<lbs>19040</lbs>
+</opt>
+
+<opt>
+<name>CH-47</name>
+<lbs>23400</lbs>
+</opt>
+
+
+</weight>
+
+  
+  
+  <menubar include="Dialogs/menu.xml"/>
+
+ </sim>
+ 
+  <input>
+    <keyboard include="Nasal/keyboard.xml"/>
+  </input>
+ 
+ <systems>
+          <autopilot>
+            <path>Aircraft/a400m/Systems/autopilot3.xml</path>
+          </autopilot>
+          <electrical>
+            <path>Aircraft/Generic/generic-electrical.xml</path>
+          </electrical>
+          <refuel>
+            <type>probe</type>
+            <serviceable type="bool">true</serviceable>
+          </refuel>
+  </systems>
+
+ <yasim>
+  <nose>30000</nose>
+  <tail>-30000</tail>
+  <load01>25000</load01>
+ </yasim>
+
+ 
+ <!-- engines on, low pitch (parking) -->
+  <controls>
+    <engines>
+      <engine n="0">
+        <magnetos archive="y">3</magnetos>
+        <propeller-pitch>1.0</propeller-pitch>
+      </engine>
+      <engine n="1">
+        <magnetos archive="y">3</magnetos>
+        <propeller-pitch>1.0</propeller-pitch>
+      </engine>
+      <engine n="2">
+        <magnetos archive="y">3</magnetos>
+        <propeller-pitch>1.0</propeller-pitch>
+      </engine>
+      <engine n="3">
+        <magnetos archive="y">3</magnetos>
+        <propeller-pitch>1.0</propeller-pitch>
+      </engine>
+    </engines>
+	
+	<gear>
+      <brake-parking>1.0</brake-parking>
+      <gear-down>true</gear-down>
+    </gear>
+	 <armament>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+	   </armament>	
+</controls>
+
+ <instrumentation>
+  <efis>
+
+			<ecam>
+					<display-mode type="string">FUEL</display-mode>
+			</ecam>
+			<nd>
+					<display-mode type="string">VOR</display-mode>
+					<display-mode-knob type="int">2</display-mode-knob>
+					<display-range type="int">40</display-range>
+				
+			</nd>
+			<input>
+				<vor-adf-1 type="int">1</vor-adf-1>
+				<vor-adf-2 type="int">1</vor-adf-2>
+				<CSTR type="bool">1</CSTR>
+				<WPT type="bool">1</WPT>
+				<VORD type="bool">1</VORD>
+				<NDB type="bool">1</NDB>
+				<ARPT type="bool">1</ARPT>
+				<WX type="bool">1</WX>
+				<TERR type="bool">1</TERR>
+				<TRAF type="bool">1</TRAF>
+				<taxi type="bool">1</taxi>
+			</input>
+
+		
+		</efis>
+    <radar>
+      <serviceable type="bool" archive="y">true</serviceable>
+      <switch type="string" archive="y">off</switch>
+      <mode-control type="int" archive="y">3</mode-control>
+      <range type="int" archive="y">20</range>
+      <mode type="string" archive="y">WX</mode>
+      <heading-marker type="bool" archive="y">false</heading-marker>
+      <lightning type="bool" archive="y">false</lightning>
+      <display-mode type="string">arc</display-mode>
+      <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
+      <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+      <display-controls>
+        <WX type="bool" archive="y">false</WX>
+        <data type="bool" archive="y">false</data>
+        <pos type="bool" archive="y">true</pos>
+      </display-controls>
+    </radar>
+    <inst-vertical-speed-indicator>
+      <serviceable>true</serviceable>
+    </inst-vertical-speed-indicator>
+    <doors>
+      <crew>
+        <position-norm type="float">0</position-norm>
+      </crew>
+      <passenger>
+        <position-norm type="float">0</position-norm>
+      </passenger>
+    </doors>
+  </instrumentation>
+  
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <level-gal_us archive="y">2657.35</level-gal_us>
+      </tank>
+	  <tank n="1">
+        <level-gal_us archive="y">2657.35</level-gal_us>
+      </tank>
+	  <tank n="2">
+        <level-gal_us archive="y">2657.35</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+  
+  <nasal>
+	    <a400m>
+           
+			<file>Aircraft/a400m/Nasal/light.nas</file>
+			<file>Aircraft/a400m/Nasal/liveries.nas</file>			
+		</a400m>
+		 <doors>
+      <file>Aircraft/a400m/Nasal/doors.nas</file>
+    </doors>
+		<rwr>
+         <file>Aircraft/a400m/Nasal/rwr.nas</file>
+        </rwr> 
+        <radardist>
+         <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+        </radardist>
+        <enav>
+         <file>Aircraft/a400m/Nasal/enav.nas</file>
+        </enav>
+        <radar>
+         <file>Aircraft/a400m/Nasal/radar.nas</file> 
+        </radar>
+        <radar2>
+          <file>Aircraft/a400m/Nasal/radar2.nas</file>
+        </radar2>
+        <cdu>
+			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
+		</cdu>
+		<aar>
+          <file>Aircraft/Generic/aar.nas</file>
+        </aar>
+		
+    <terrain-map>
+          <file>Aircraft/a400m/Nasal/terrain-map.nas</file>
+    </terrain-map>
+   
+	<enav>
+      <file>Aircraft/a400m/Nasal/enav.nas</file>
+    </enav>
+<!--
+		<engines>
+   <file>Aircraft/a400m/Nasal/generic-yasim-engine.nas</file>
+  </engines>
+  
+  <emu>
+   <file>Aircraft/a400m/Nasal/emu.nas</file>
+  </emu>
+-->
+    </nasal>
+ 
+</PropertyList>

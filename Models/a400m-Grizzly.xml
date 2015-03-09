@@ -1,0 +1,1283 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<PropertyList>
+
+ <path>A-400M.ac</path>
+ 
+
+ <nasal>
+    <load>
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
+	  
+	     var root = cmdarg();
+
+      
+    </load>
+
+    <unload>
+       crew_door.unalias();
+      passenger_door.unalias();
+      
+    </unload>
+  </nasal>
+
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+     <object-name>glass</object-name>
+     <object-name>windows</object-name>
+
+  </animation>
+  
+  
+  <effect>
+      <inherits-from>Effects/model-transparent</inherits-from>
+      <object-name>cockpit-glass</object-name>
+	  <object-name>windows</object-name>
+	   
+		  
+
+   </effect>
+ 
+ 
+ 
+
+ 
+
+<!-- Gouvernes -->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>rudder</object-name>
+  <property>controls/flight/rudder</property>
+  <factor>18</factor>
+  <axis>
+   <x1-m>15.47</x1-m>
+   <y1-m>0.0</y1-m>
+   <z1-m>2.5</z1-m>
+   <x2-m>19.7</x2-m>
+   <y2-m>0.0</y2-m>
+   <z2-m>8.32</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>l-elevator</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-18</factor>
+  <axis>
+   <x1-m>19.72</x1-m>
+   <y1-m>-0.65</y1-m>
+   <z1-m>9.26</z1-m>
+   <x2-m>23.76</x2-m>
+   <y2-m>-8.69</y2-m>
+   <z2-m>9.26</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>r-elevator</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>18</factor>
+  <axis>
+   <x1-m>19.72</x1-m>
+   <y1-m>0.65</y1-m>
+   <z1-m>9.26</z1-m>
+   <x2-m>23.76</x2-m>
+   <y2-m>8.69</y2-m>
+   <z2-m>9.26</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>l-aleron</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>-25</factor>
+  <axis>
+   <x1-m>-0.64</x1-m>
+   <y1-m>-14.1</y1-m>
+   <z1-m>0.93</z1-m>
+   <x2-m>1.075</x2-m>
+   <y2-m>-20.7</y2-m>
+   <z2-m>0.2</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>right-aleron</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>-25</factor>
+  <axis>
+    <x1-m>-0.64</x1-m>
+   <y1-m>14.1</y1-m>
+   <z1-m>0.93</z1-m>
+   <x2-m>1.075</x2-m>
+   <y2-m>20.7</y2-m>
+   <z2-m>0.2</z2-m>
+  </axis>
+ </animation>
+
+<!-- Volets -->
+ <animation>
+  <type>rotate</type>
+  <object-name>left-flap</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>-45</factor>
+  <axis>
+   <x1-m>-2.5</x1-m>
+   <y1-m>-1.52</y1-m>
+   <z1-m>1.78</z1-m>
+   <x2-m>0.8</x2-m>
+   <y2-m>-14</y2-m>
+   <z2-m>0.915</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>right-flap</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>45</factor>
+  <axis>
+   <x1-m>-2.5</x1-m>
+   <y1-m>1.52</y1-m>
+   <z1-m>1.78</z1-m>
+   <x2-m>0.8</x2-m>
+   <y2-m>14</y2-m>
+   <z2-m>0.915</z2-m>
+  </axis>
+ </animation>
+
+<!-- Train d'atterrissage -->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Barre1</object-name>
+  <object-name>Essieu1</object-name>
+  <object-name>Roue1.1</object-name>
+  <object-name>Roue1.2</object-name>
+  <property>gear/gear[0]/position-norm</property>
+   <interpolation>
+    <entry>
+     <ind>0.0</ind>
+     <dep>120.0</dep>
+    </entry>
+    <entry>
+     <ind>0.10</ind>
+     <dep>120.0</dep>
+    </entry>
+    <entry>
+     <ind>0.90</ind>
+     <dep>0.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>0.0</dep>
+    </entry>
+   </interpolation>
+  <center>
+   <x-m>-16.37</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-2.42</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>groupL1</object-name>
+  <object-name>L1wheels</object-name>
+  <property>gear/gear[1]/position-norm</property>
+   <interpolation>
+    <entry>
+     <ind>0.0</ind>
+     <dep>52.0</dep>
+    </entry>
+    <entry>
+     <ind>0.50</ind>
+     <dep>22.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>0.0</dep>
+    </entry>
+   </interpolation>
+  <center>
+   <x-m>-3.825</x-m>
+   <y-m>-3.6</y-m>
+   <z-m>-2.15</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>groupR2</object-name>
+  <object-name>R2wheels</object-name>
+  <property>gear/gear[2]/position-norm</property>
+   <interpolation>
+    <entry>
+     <ind>0.0</ind>
+     <dep>52.0</dep>
+    </entry>
+    <entry>
+     <ind>0.50</ind>
+     <dep>22.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>0.0</dep>
+    </entry>
+   </interpolation>
+  <center>
+   <x-m>-2.21</x-m>
+   <y-m>-3.6</y-m>
+   <z-m>-2.15</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>groupL3</object-name>
+  <object-name>L3wheels</object-name>
+  <property>/gear/gear[3]/position-norm</property>
+   <interpolation> 
+    <entry>
+     <ind>0.0</ind>
+     <dep>52.0</dep>
+    </entry>
+    <entry>
+     <ind>0.50</ind>
+     <dep>22.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>0.0</dep>
+    </entry>
+   </interpolation>
+  <center>
+   <x-m>-0.625</x-m>
+   <y-m>-3.6</y-m>
+   <z-m>-2.15</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>groupR1</object-name>
+  <object-name>R1wheels</object-name>
+  <property>gear/gear[4]/position-norm</property>
+   <interpolation>
+    <entry>
+     <ind>0.0</ind>
+     <dep>52.0</dep>
+    </entry>
+    <entry>
+     <ind>0.50</ind>
+     <dep>22.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>0.0</dep>
+    </entry>
+   </interpolation>
+  <center>
+   <x-m>-3.825</x-m>
+   <y-m>3.6</y-m>
+   <z-m>-2.15</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>groupR2</object-name>
+  <object-name>R2wheels</object-name>
+  <property>gear/gear[5]/position-norm</property>
+   <interpolation>
+    <entry>
+     <ind>0.0</ind>
+     <dep>52.0</dep>
+    </entry>
+    <entry>
+     <ind>0.50</ind>
+     <dep>22.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>0.0</dep>
+    </entry>
+   </interpolation>
+  <center>
+   <x-m>-2.21</x-m>
+   <y-m>3.6</y-m>
+   <z-m>-2.15</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>groupR3</object-name>
+  <object-name>R3wheels</object-name>
+  <property>gear/gear[6]/position-norm</property>
+   <interpolation>
+     <entry>
+     <ind>0.0</ind>
+     <dep>52.0</dep>
+    </entry>
+    <entry>
+     <ind>0.50</ind>
+     <dep>22.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>0.0</dep>
+    </entry>
+   </interpolation>
+  <center>
+   <x-m>-0.625</x-m>
+   <y-m>3.6</y-m>
+   <z-m>-2.15</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Roue1.1</object-name>
+  <object-name>Roue1.2</object-name>
+  <object-name>Essieu1</object-name>
+  <property>controls/flight/rudder</property>
+  <factor>18</factor>
+  <axis>
+   <x1-m>-16.37</x1-m>
+   <y1-m>0.0</y1-m>
+   <z1-m>-2.0</z1-m>
+   <x2-m>-16.37</x2-m>
+   <y2-m>0.0</y2-m>
+   <z2-m>-4.0</z2-m>
+  </axis>
+ </animation>
+
+ 
+<!-- Helices -->
+
+<model>
+   <path>Aircraft/a400m/Models/props/props.xml</path> 
+<offsets> 
+	<x-m> 0.2</x-m>
+	<y-m> 0.1 </y-m>
+	<z-m> 0</z-m>
+   </offsets>
+  </model>
+  
+  
+   <!-- Ramp Animations -->
+  <animation>
+    <type>rotate</type>
+    <object-name>ramp</object-name>
+	<object-name>ramp2</object-name>
+    <property>instrumentation/doors/passenger/position-norm</property>
+    <factor> 26.12 </factor>
+    <center>
+      <x-m>2.5</x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -2 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+		<type>rotate</type>
+		<object-name>ramp2</object-name>
+    <property>instrumentation/doors/passenger/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>0.2</ind><dep>0.0</dep></entry>
+			<entry><ind>0.8</ind><dep>-82.0</dep></entry>
+			<entry><ind>1.0</ind><dep>-82.0</dep></entry>
+		</interpolation> 
+		
+ 		<axis>
+  			<x1-m>10</x1-m>
+  			<y1-m>2.0</y1-m>
+  			<z1-m>-0.7</z1-m>
+  			<x2-m>10</x2-m>
+  			<y2-m>-2.0</y2-m>
+  			<z2-m>-0.7</z2-m>
+ 		</axis>
+	</animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>upper-ramp</object-name>
+    <property>instrumentation/doors/passenger/position-norm</property>
+    <factor> 22.52</factor>
+    <center>
+      <x-m> 15 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+
+<!--
+
+ <animation>
+  <type>select</type>
+  <object-name>Helice0</object-name>
+  <condition>
+   <less-than>
+    <property>/engines/engine[0]/rpm</property>
+    <value>50</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Pale1</object-name>
+  <object-name>Pale1.001</object-name>
+  <object-name>Pale1.002</object-name>
+  <object-name>Pale1.003</object-name>
+  <object-name>Pale1.004</object-name>
+  <object-name>Pale1.005</object-name>
+  <object-name>Pale1.006</object-name>
+  <object-name>Pale1.007</object-name>
+  <condition>
+   <less-than>
+    <property>engines/engine[1]/rpm</property>
+    <value>50</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Pale2</object-name>
+  <object-name>Pale2.001</object-name>
+  <object-name>Pale2.002</object-name>
+  <object-name>Pale2.003</object-name>
+  <object-name>Pale2.004</object-name>
+  <object-name>Pale2.005</object-name>
+  <object-name>Pale2.006</object-name>
+  <object-name>Pale2.007</object-name>
+  <condition>
+   <less-than>
+    <property>engines/engine[2]/rpm</property>
+    <value>50</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Pale3</object-name>
+  <object-name>Pale3.001</object-name>
+  <object-name>Pale3.002</object-name>
+  <object-name>Pale3.003</object-name>
+  <object-name>Pale3.004</object-name>
+  <object-name>Pale3.005</object-name>
+  <object-name>Pale3.006</object-name>
+  <object-name>Pale3.007</object-name>
+  <condition>
+   <less-than>
+    <property>engines/engine[3]/rpm</property>
+    <value>50</value>
+   </less-than>
+  </condition>
+ </animation>
+
+
+ <animation>
+  <type>select</type>
+  <object-name>Disque0</object-name>
+  <condition>
+   <greater-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>50</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Disque1</object-name>
+  <condition>
+   <greater-than>
+    <property>engines/engine[1]/rpm</property>
+    <value>50</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Disque2</object-name>
+  <condition>
+   <greater-than>
+    <property>engines/engine[2]/rpm</property>
+    <value>50</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Disque3</object-name>
+  <condition>
+   <greater-than>
+    <property>engines/engine[3]/rpm</property>
+    <value>50</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Disque0</object-name>
+  <object-name>Disque0.2</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>-7.74</x-m>
+   <y-m>-12.84</y-m>
+   <z-m>0.10</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Disque1</object-name>
+  <object-name>Disque1.2</object-name>
+  <property>engines/engine[1]/rpm</property>
+  <center>
+   <x-m>-9.42</x-m>
+   <y-m>-6.92</y-m>
+   <z-m>0.486</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Disque2</object-name>
+  <object-name>Disque2.2</object-name>
+  <property>engines/engine[2]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>-9.42</x-m>
+   <y-m>6.792</y-m>
+   <z-m>0.492</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Disque3</object-name>
+  <object-name>Disque3.2</object-name>
+  <property>engines/engine[3]/rpm</property>
+  <center>
+   <x-m>-7.74</x-m>
+   <y-m>12.70</y-m>
+   <z-m>0.096</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Helice0</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>-7.74</x-m>
+   <y-m>-12.84</y-m>
+   <z-m>0.10</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Helice1</object-name>
+  <property>engines/engine[1]/rpm</property>
+  <center>
+   <x-m>-9.42</x-m>
+   <y-m>-6.92</y-m>
+   <z-m>0.486</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Helice2</object-name>
+  <property>engines/engine[2]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>-9.42</x-m>
+   <y-m>6.792</y-m>
+   <z-m>0.492</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Helice3</object-name>
+  <property>engines/engine[3]/rpm</property>
+  <center>
+   <x-m>-7.74</x-m>
+   <y-m>12.70</y-m>
+   <z-m>0.096</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ -->
+ 
+ <!-- Gear disapears when raised -->
+
+<animation>
+        <type>select</type>
+        <object-name>lf-tyre</object-name>
+        <object-name>rf-tyre</object-name>
+        <object-name>rf-hub</object-name>
+		<object-name>lf-hub</object-name>
+        <object-name>f-axel</object-name>
+        <object-name>Color_01</object-name>
+		<object-name>Mesh90</object-name>
+        <object-name>Mesh89</object-name>
+        <object-name>fl-strut</object-name>
+		<object-name>Mesh86</object-name>
+		<object-name>fm-strut</object-name>
+		<object-name>Mesh88</object-name>
+		<object-name>Mesh87</object-name>
+		<object-name>Mesh85</object-name>
+		<object-name>Mesh340</object-name>
+		<object-name>fu-strut</object-name>
+		<object-name>Mesh94</object-name>
+		<object-name>Mesh95</object-name>
+		<object-name>Mesh96</object-name>
+		<object-name>Mesh97</object-name>
+		<object-name>Mesh98</object-name>
+		<object-name>black.003</object-name>
+		<object-name>black.002</object-name>
+		<object-name>black</object-name>
+		<object-name>black.001</object-name>
+		<object-name>Color_00.002</object-name>
+		<object-name>Color_00.001</object-name>
+		<object-name>Color_00.003</object-name>
+		<object-name>Color_00.004</object-name>
+		<object-name>black.006</object-name>
+		<object-name>black.007</object-name>
+		<object-name>black.005</object-name>
+		<object-name>black.004</object-name>
+		<object-name>Color_00.007</object-name>
+		<object-name>Color_00.008</object-name>
+		<object-name>Color_00.005</object-name>
+		<object-name>Color_00.006</object-name>
+		<object-name>black.010</object-name>
+		<object-name>black.011</object-name>
+		<object-name>black.009</object-name>
+		<object-name>black.008</object-name>
+		<object-name>Color_00.011</object-name>
+		<object-name>Color_00.012</object-name>
+		<object-name>Color_00.009</object-name>
+		<object-name>Color_00.010</object-name>
+		<object-name>Mesh107</object-name>
+		<object-name>Mesh134</object-name>
+		<object-name>Mesh161</object-name>
+		<object-name>Mesh117</object-name>
+		<object-name>Mesh108</object-name>
+		<object-name>Mesh124</object-name>
+		<object-name>Mesh119</object-name>
+		<object-name>Mesh122</object-name>
+		<object-name>Mesh121</object-name>
+		<object-name>Mesh120</object-name>
+		<object-name>Mesh123</object-name>
+		<object-name>Mesh125</object-name>
+		<object-name>Mesh118</object-name>
+		<object-name>Mesh110</object-name>
+		<object-name>Mesh115</object-name>
+		<object-name>Mesh113</object-name>
+		<object-name>Mesh112</object-name>
+		<object-name>Mesh111</object-name>
+		<object-name>Mesh114</object-name>
+		<object-name>Mesh116</object-name>
+		<object-name>Mesh109</object-name>
+		<object-name>Mesh105</object-name>
+		<object-name>3D_Objec21</object-name>
+		<object-name>Mesh106</object-name>
+		<object-name>Mesh104</object-name>
+		<object-name>Mesh103</object-name>
+		<object-name>Mesh182</object-name>
+		<object-name>3D_Objec25</object-name>
+		<object-name>Mesh100</object-name>
+		<object-name>Mesh99</object-name>
+		<object-name>Mesh102</object-name>
+		<object-name>Mesh101</object-name>
+		<object-name>Mesh144</object-name>
+		<object-name>Mesh135</object-name>
+		<object-name>Mesh151</object-name>
+		<object-name>Mesh146</object-name>
+		<object-name>Mesh148</object-name>
+		<object-name>Mesh149</object-name>
+		<object-name>Mesh150</object-name>
+		<object-name>Mesh147</object-name>
+		<object-name>Mesh152</object-name>
+		<object-name>Mesh145</object-name>
+		<object-name>Mesh137</object-name>
+		<object-name>Mesh142</object-name>
+		<object-name>Mesh139</object-name>
+		<object-name>Mesh140</object-name>
+		<object-name>Mesh138</object-name>
+		<object-name>Mesh141</object-name>
+		<object-name>Mesh143</object-name>
+		<object-name>Mesh136</object-name>
+		<object-name>Mesh132</object-name>
+		<object-name>3D_Objec26</object-name>
+		<object-name>Mesh131</object-name>
+		<object-name>Mesh130</object-name>
+		<object-name>Mesh181</object-name>
+		<object-name>Mesh133</object-name>
+		<object-name>3D_Objec30</object-name>
+		<object-name>Mesh127</object-name>
+		<object-name>Mesh129</object-name>
+		<object-name>Mesh128</object-name>
+		<object-name>Mesh126</object-name>
+		<object-name>Mesh171</object-name>
+		<object-name>Mesh162</object-name>
+		<object-name>Mesh178</object-name>
+		<object-name>Mesh173</object-name>
+		<object-name>Mesh175</object-name>
+		<object-name>Mesh176</object-name>
+		<object-name>Mesh177</object-name>
+		<object-name>Mesh174</object-name>
+		<object-name>Mesh179</object-name>
+		<object-name>Mesh172</object-name>
+		<object-name>Mesh164</object-name>
+		<object-name>Mesh169</object-name>
+		<object-name>Mesh167</object-name>
+		<object-name>Mesh166</object-name>
+		<object-name>Mesh165</object-name>
+		<object-name>Mesh168</object-name>
+		<object-name>Mesh170</object-name>
+		<object-name>Mesh163</object-name>
+		<object-name>Mesh159</object-name>
+		<object-name>3D_Objec31</object-name>
+		<object-name>Mesh158</object-name>
+		<object-name>Mesh157</object-name>
+		<object-name>Mesh160</object-name>
+		<object-name>Mesh180</object-name>
+		<object-name>3D_Objec35</object-name>
+		<object-name>Mesh154</object-name>
+		<object-name>Mesh156</object-name>
+		<object-name>Mesh155</object-name>
+		<object-name>Mesh153</object-name>
+		<object-name>black.014</object-name>
+		<object-name>black.015</object-name>
+		<object-name>black.012</object-name>
+		<object-name>black.013</object-name>
+		<object-name>Color_00.015</object-name>
+		<object-name>Color_00.016</object-name>
+		<object-name>Color_00.014</object-name>
+		<object-name>Color_00.013</object-name>
+		<object-name>Mesh09</object-name>
+		<object-name>black.017</object-name>
+		<object-name>black.016</object-name>
+		<object-name>black.019</object-name>
+		<object-name>black.018</object-name>
+		<object-name>Color_00.018</object-name>
+		<object-name>Color_00.017</object-name>
+		<object-name>Color_00.020</object-name>
+		<object-name>Color_00.019</object-name>
+		<object-name>Mesh36</object-name>
+		<object-name>black.021</object-name>
+		<object-name>black.020</object-name>
+		<object-name>black.023</object-name>
+		<object-name>black.022</object-name>
+		<object-name>Color_00.023</object-name>
+		<object-name>Color_00.024</object-name>
+		<object-name>Color_00.021</object-name>
+		<object-name>Color_00.022</object-name>
+		<object-name>Mesh63</object-name>
+		<object-name>Mesh84</object-name>
+		<object-name>3D_Objec04</object-name>
+		<object-name>Mesh83</object-name>
+		<object-name>3D_Objec09</object-name>
+		<object-name>Mesh82</object-name>
+		<object-name>3D_Objec14</object-name>
+		<object-name>Mesh08</object-name>
+		<object-name>Mesh35</object-name>
+		<object-name>Mesh62</object-name>
+		<object-name>Mesh07</object-name>
+		<object-name>Mesh34</object-name>
+		<object-name>Mesh61</object-name>
+		<object-name>3D_Object_</object-name>
+		<object-name>3D_Objec05</object-name>
+		<object-name>3D_Objec10</object-name>
+		<object-name>Mesh10</object-name>
+		<object-name>Mesh12</object-name>
+		<object-name>Mesh17</object-name>
+		<object-name>Mesh15</object-name>
+		<object-name>Mesh14</object-name>
+		<object-name>Mesh13</object-name>
+		<object-name>Mesh16</object-name>
+		<object-name>Mesh18</object-name>
+		<object-name>Mesh11</object-name>
+		<object-name>Mesh19</object-name>
+		<object-name>Mesh26</object-name>
+		<object-name>Mesh21</object-name>
+		<object-name>Mesh24</object-name>
+		<object-name>Mesh23</object-name>
+		<object-name>Mesh22</object-name>
+		<object-name>Mesh25</object-name>
+		<object-name>Mesh20</object-name>
+		<object-name>Mesh27</object-name>
+		<object-name>Mesh06</object-name>
+		<object-name>Mesh05</object-name>
+		<object-name>Mesh02</object-name>
+		<object-name>Mesh04</object-name>
+		<object-name>Mesh03</object-name>
+		<object-name>Mesh01</object-name>
+		<object-name>Mesh37</object-name>
+		<object-name>Mesh46</object-name>
+		<object-name>Mesh44</object-name>
+		<object-name>Mesh39</object-name>
+		<object-name>Mesh41</object-name>
+		<object-name>Mesh42</object-name>
+		<object-name>Mesh43</object-name>
+		<object-name>Mesh40</object-name>
+		<object-name>Mesh38</object-name>
+		<object-name>Mesh45</object-name>
+		<object-name>Mesh48</object-name>
+		<object-name>Mesh53</object-name>
+		<object-name>Mesh51</object-name>
+		<object-name>Mesh50</object-name>
+		<object-name>Mesh49</object-name>
+		<object-name>Mesh52</object-name>
+		<object-name>Mesh54</object-name>
+		<object-name>Mesh47</object-name>
+		<object-name>Mesh33</object-name>
+		<object-name>Mesh32</object-name>
+		<object-name>Mesh29</object-name>
+		<object-name>Mesh28</object-name>
+		<object-name>Mesh31</object-name>
+		<object-name>Mesh30</object-name>
+		<object-name>Mesh64</object-name>
+		<object-name>Mesh73</object-name>
+		<object-name>Mesh71</object-name>
+		<object-name>Mesh66</object-name>
+		<object-name>Mesh69</object-name>
+		<object-name>Mesh68</object-name>
+		<object-name>Mesh67</object-name>
+		<object-name>Mesh70</object-name>
+		<object-name>Mesh72</object-name>
+		<object-name>Mesh65</object-name>
+		<object-name>Mesh75</object-name>
+		<object-name>Mesh80</object-name>
+		<object-name>Mesh78</object-name>
+		<object-name>Mesh77</object-name>
+		<object-name>Mesh76</object-name>
+		<object-name>Mesh79</object-name>
+		<object-name>Mesh81</object-name>
+		<object-name>Mesh74</object-name>
+		<object-name>Mesh60</object-name>
+		<object-name>Mesh59</object-name>
+		<object-name>Mesh56</object-name>
+		<object-name>Mesh58</object-name>
+		<object-name>Mesh57</object-name>
+		<object-name>Mesh55</object-name>
+		
+        <condition>
+        <property>gear/gear[0]/position-norm</property>
+        </condition>
+    </animation>
+
+ <!-- Interior -->
+ <model>
+   <path>Aircraft/a400m/Models/Interior/cockpit.xml</path> 
+<offsets> 
+	<x-m> 0.0</x-m>
+	<y-m> 0.0 </y-m>
+	<z-m> 0</z-m>
+   </offsets>
+  </model>
+  
+  
+  <model>
+   <path>Aircraft/a400m/Models/Interior/cargobay.xml</path> 
+<offsets> 
+	<x-m> 0.0</x-m>
+	<y-m> 0.08 </y-m>
+	<z-m> 0</z-m>
+	<heading-deg>-0.5</heading-deg>
+   </offsets>
+  </model>
+  
+  <!-- Pilots -->
+   <model>
+  <name>pilot</name>
+    <path>Aircraft/a400m/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -18.7 </x-m>
+      <y-m>  -0.5 </y-m>
+      <z-m>  0 </z-m>
+    </offsets>
+  </model>
+  
+   <model>
+   <name>co-pilot</name>
+   <path>Aircraft/a400m/Models/Pilot/pilot.xml</path>
+    <offsets>
+     <x-m> -18.7 </x-m>
+      <y-m>  0.5 </y-m>
+      <z-m>  0 </z-m>
+    </offsets>
+  </model>
+  
+  
+     <animation>
+        <type>select</type>
+        <object-name>pilot</object-name>
+		
+		<condition>
+<not>
+            <property>sim/current-view/internal</property>
+</not>
+        </condition>
+    </animation>		
+
+		
+
+  <!-- LIGHTS -->
+
+<model>
+<path>Aircraft/a400m/Models/lights/GreenLight.xml</path>
+<name>Greenlight</name>     
+<offsets>
+<x-m> -1.0</x-m>
+<y-m> 21.1</y-m>
+<z-m>  0.6</z-m>       
+      
+</offsets>
+</model>
+
+<model>
+<path>Aircraft/a400m/Models/lights/RedLight.xml</path>
+<name>Redlight</name>     
+<offsets>
+<x-m> -1.0</x-m>
+<y-m> -21.1</y-m>
+<z-m>  0.6</z-m>       
+</offsets>
+</model>
+
+<model>
+<path>Aircraft/a400m/Models/lights/StrobeWhite.xml</path>
+<name>flashright</name>     
+<offsets>
+<x-m> -1.4</x-m>
+<y-m> 20.8</y-m>
+<z-m>  0.7</z-m>         
+</offsets>
+</model>
+
+<model>
+<path>Aircraft/a400m/Models/lights/StrobeWhite.xml</path>
+<name>flashleft</name>     
+<offsets>
+<x-m> -1.4</x-m>
+<y-m> -20.8</y-m>
+<z-m>  0.7</z-m>        
+</offsets>
+</model>
+
+
+<model>
+<path>Aircraft/a400m/Models/lights/StrobeWhite.xml</path>
+<name>flashtail</name>     
+<offsets>
+<x-m> 19.4</x-m>
+<y-m> 0</y-m>
+<z-m>  2.</z-m>        
+</offsets>
+</model>
+
+<model>
+<path>Aircraft/a400m/Models/lights/StrobeWhite.xml</path>
+<name>flashbottom</name>     
+<offsets>
+<x-m> -12.5</x-m>
+<y-m> 0</y-m>
+<z-m>  -3.1</z-m>        
+</offsets>
+</model>
+
+
+<model>
+<path>Aircraft/a400m/Models/lights/light-cone.xml</path>
+<name>LeftWingLandinglight</name>
+    
+<offsets>
+<x-m>-9.4</x-m>
+<y-m>-2.5</y-m>
+<z-m>-2.5</z-m>      
+</offsets>
+</model>
+
+
+
+
+
+<model>
+<path>Aircraft/a400m/Models/lights/light-cone.xml</path>
+<name>RightWingLandinglight</name>
+  
+<offsets>
+<x-m>-9.4</x-m>
+<y-m>2.5</y-m>
+<z-m>-2.5</z-m>          
+     
+</offsets>
+</model>
+
+
+
+
+  
+
+
+
+
+
+<!-- Tyre Smoke -->
+
+<model>
+ <path>Aircraft/a400m/Models/effects/tyre-smoke-nose.xml</path>
+ <name>tyre-smoke-n</name>
+ <offsets>
+  <x-m>-16.3</x-m>
+  <y-m>0</y-m>
+  <z-m>-4.09</z-m>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/a400m/Models/effects/tyre-smoke-port.xml</path>
+ <name>tyre-smoke-p</name>
+ <offsets>
+  <x-m>-1.25</x-m>
+  <y-m>-3.6</y-m>
+  <z-m>-4.14</z-m>
+ </offsets>
+</model>
+
+
+
+<model>
+ <path>Aircraft/a400m/Models/effects/tyre-smoke-stbd.xml</path>
+ <name>tyre-smoke-s</name>
+ <offsets>
+  <x-m>-1.25</x-m>
+  <y-m>3.6</y-m>
+  <z-m>-4.14</z-m>
+ </offsets>
+</model>
+
+ <!-- Smoke -->
+ <model>
+    <path>Aircraft/a400m/Models/effects/smoke/smokeL.xml</path>
+    <offsets>
+      <x-m> -3 </x-m>
+      <y-m> -12.7 </y-m>
+      <z-m> 0.18 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/trail/trailL.xml</path>
+    <offsets>
+      <x-m> -3 </x-m>
+      <y-m> -12.7 </y-m>
+      <z-m> 0.18 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/smoke/smokeL.xml</path>
+    <offsets>
+      <x-m> -3 </x-m>
+      <y-m> -6.86 </y-m>
+      <z-m> 0.56 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/trail/trailL.xml</path>
+    <offsets>
+      <x-m> -3 </x-m>
+      <y-m> -6.86 </y-m>
+      <z-m> 0.56 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/smoke/smokeR.xml</path>
+    <offsets>
+      <x-m> -3 </x-m>
+      <y-m> 6.86 </y-m>
+      <z-m> 0.56 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/trail/trailR.xml</path>
+    <offsets>
+      <x-m> -3 </x-m>
+      <y-m> 6.86 </y-m>
+      <z-m> 0.56 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/smoke/smokeR.xml</path>
+    <offsets>
+      <x-m> -3 </x-m>
+      <y-m> 12.7 </y-m>
+      <z-m> 0.18 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/trail/trailR.xml</path>
+    <offsets>
+     <x-m> -3 </x-m>
+      <y-m> 12.7 </y-m>
+      <z-m> 0.18 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- tip trails -->
+  <model>
+    <path>Aircraft/a400m/Models/effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m> -1.3</x-m>
+      <y-m> 21.5</y-m>
+      <z-m>  0.7</z-m> 
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/a400m/Models/effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m> -1.3</x-m>
+      <y-m> -21.5</y-m>
+      <z-m>  0.7</z-m> 
+    </offsets>
+  </model>  
+  
+  <!-- payload -->
+  
+  <model>
+<path>Aircraft/a400m/Models/payload/loads.xml</path>
+    
+<offsets>
+<x-m>0</x-m>
+<y-m>0</y-m>
+<z-m>0.2</z-m>       
+      
+</offsets>
+</model>
+  
+</PropertyList>

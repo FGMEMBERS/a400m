@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<!--
+	<model>
+		<name>Pylons</name>
+		<path>Aircraft/a400m/Models/payload/pylons.xml</path>
+		<offsets>
+			<x-m>-18</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>	
+-->
+
+
+<!-- Cargobay -->
+
+
+
+
+	<model>
+		<name>1xHummer</name>
+		<path>Aircraft/fgukpayloads/hummvee/Hummer.xml</path>
+		<offsets>
+			<x-m>-2</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.0</z-m>
+			<heading-deg>180</heading-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>1xHummer</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>1x Hummer</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>		
+
+<model>
+		<name>2xHummer</name>
+		<path>Aircraft/a400m/Models/payload/2xhummer.xml</path>
+		<offsets>
+			<x-m>-2.5</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.2</z-m>
+			<yaw-deg>180</yaw-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>2xHummer</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>2x Hummer</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>		  
+
+
+<model>
+		<name>1xwmik</name>
+		<path>Aircraft/fgukpayloads/landrover/wmik.xml</path>
+		<offsets>
+			<x-m>-2</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.2</z-m>
+			<heading-deg>180</heading-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>1xwmik</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>1x LandRover WMIK</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>		
+ 
+  <model>
+		<name>2xwmik</name>
+		<path>Aircraft/a400m/Models/payload/2xwmik.xml</path>
+		<offsets>
+			<x-m>-2.5</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.2</z-m>
+			<yaw-deg>180</yaw-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>2xwmik</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>2x LandRover WMIK</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>		
+  
+  
+  <model>
+		<name>1xjackal</name>
+		<path>Aircraft/fgukpayloads/Jackal/jackal.xml</path>
+		<offsets>
+			<x-m>-2</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.2</z-m>
+			<heading-deg>180</heading-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>1xjackal</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>1x Jackal</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+  
+  
+   <model>
+		<name>2xJackal</name>
+		<path>Aircraft/a400m/Models/payload/2xjackal.xml</path>
+		<offsets>
+			<x-m>-2.7</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.2</z-m>
+			<yaw-deg>180</yaw-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>2xJackal</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>2x Jackal</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+  
+  
+  
+   <model>
+		<name>MTVR1</name>
+		<path>Aircraft/fgukpayloads/MTVR/mtvr.xml</path>
+		<offsets>
+			<x-m>-2.9</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.2</z-m>
+			<heading-deg>180</heading-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>MTVR1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>MTVR</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+  
+
+  
+  <model>
+		<name>viking</name>
+		<path>Aircraft/fgukpayloads/viking/viking.xml</path>
+		<offsets>
+			<x-m>-2.9</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.2</z-m>
+			<heading-deg>180</heading-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>viking</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>BVS10-Viking</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+
+  <model>
+		<name>CH47</name>
+		<path>Aircraft/fgukpayloads/ch-47/ch-47a.xml</path>
+		<offsets>
+			<x-m>-2.2</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.38</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+  <animation>
+    <type>select</type>
+    <object-name>CH47</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>CH-47</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>	
+
+
+
+
+
+</PropertyList>
