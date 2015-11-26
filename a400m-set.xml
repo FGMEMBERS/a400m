@@ -21,7 +21,10 @@
     </submodels>
   
   <startup>
-      <splash-texture>Aircraft/a400m/splash.png</splash-texture>
+      <splash-texture>Aircraft/a400m/Splash/splash.png</splash-texture>
+	  <splash-texture>Aircraft/a400m/Splash/splash1.png</splash-texture>
+	  <splash-texture>Aircraft/a400m/Splash/splash2.png</splash-texture>
+	  <splash-texture>Aircraft/a400m/Splash/splash3.png</splash-texture>
     </startup>
   
   
